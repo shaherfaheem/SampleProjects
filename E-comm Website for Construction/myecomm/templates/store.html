@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+</br></br></br></br></br>
+<h1 class="slogan"><center>BUILD YOUR DREAM</center></h1>
+</br></br></br></br></br></br></br></br></br></br>
+	<ul class="navbar">
+		<h1>FEATURED</h1> 
+		<form class="search" id="search" method="POST" action="{% url 'search' %}" >
+			{% csrf_token %}
+			<input class="name" type="text" name="name" placeholder="search here">
+			<input id="cart-icon" class="image" type=image src="{% static 'images/search.png' %}" alt="search">
+			<input class="submit" id="update-user" type="submit"  hidden value="search">
+			
+			
+		</form>	
+	</ul>
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{ product.image.url }}" >
+			<div class="box-element product">
+				<h6><strong>{{ product.name }}</strong></h6>
+				<hr>
+				<button data-product="{{ product.id }}" data-action="add"  class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				<a class="btn btn-outline-success" href="#">View</a>
+				<h4 style="display: inline-block; float: right "><strong>${{ product.price }}</strong></h4>
+			</div>
+		</div>	
+		{% endfor %}
+	</div>
+
+{% endblock content %}

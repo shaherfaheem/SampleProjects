@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/logreg.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" type="text/css">
+</head>
+<body>
+
+    <div class="login">
+        <h1>Login Page</h1>
+        
+        <div class="links">
+            <a href="{% url 'login' %}" class="active">Login</a> 
+            <a href="{% url 'register' %}" >Register</a>
+        </div>
+        <div class="msg"><center>{{ msg }}</center></div>
+        
+        <form method = "POST" action="{% url 'loggedin' %}">
+            {% csrf_token %}
+          
+            <label for='Username'>
+              <i class='fas fa-user'></i></label>
+            <input id="uname"  type="text" name="username" placeholder="Enter Username"  required>
+          
+            <label for='Password'><i class='fas fa-lock'></i></label>
+            <input id="pword" type="password" name="password" placeholder="Enter Password" autocomplete="on" required>
+          
+            <input type="submit" value="Login">
+        </form>
+    </div>         
+    
+</body>
+</html>
