@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'myecommdb',  
         'USER': 'root',  
-        'PASSWORD': 'root123',  
+        'PASSWORD': 'root',  
         'HOST': 'localhost',  
         'PORT': '3306',  
         'OPTIONS': {  
