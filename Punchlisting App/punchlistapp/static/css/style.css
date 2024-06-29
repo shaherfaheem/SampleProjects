@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+  margin: 0;
+  padding: 0  
+}
+body {
+  background:#2a363b;
+  color: #B1B1B1;
+  margin: 15px auto 0;
+  width: 410px;
+}
+
+#link a h3 {
+  background:#222222;
+  color: #B1B1B1;
+  display:inline-block;
+  text-align:center;
+  width:100px;
+  padding:2px 2px 2px 2px;
+  margin:5px 7px 0px 0px;
+  font: 14px/17px'Bree Serif', Georgia, serif;  
+}  
+
+#link a h3:hover {
+  background-color:#000000;
+  transition: background-color 0.2s;
+}
+#nTask {
+  overflow: auto;
+}
+#nTask #form {
+  width:410px;
+  float:left;
+}
+#nTask h2 {
+  font: 25px 'Open Sans', Verdana, Helvetica, sans-serif;
+  
+}
+#nTask #form span {
+  display:block;
+  float:left;
+  width:100px;
+  padding-top:5px;
+  font: 15px/16px'Bree Serif', Georgia, serif;
+}
+#nTask #form input {
+  float:left;
+  width:300px;
+  border:0px;
+  color:#a3b9c5;
+  padding:10px 10px 10px 30px;
+  font: 15px/20px'Open Sans', Verdana, Helvetica, sans-serif;
+  margin-bottom:1px;
+}
+#nTask #form select {
+    float:left;
+    width:340px;
+    border:0px;
+    color:#a3b9c5;
+    padding:10px 10px 10px 30px;
+    font: 15px/20px'Open Sans', Verdana, Helvetica, sans-serif;
+    margin-bottom:10px;
+  }
+#nTask #form textarea {
+  float:left;
+  border:0px;
+  width:255px;
+  height:140px;
+  padding:10px 10px 10px 30px;
+  font: 11px/20px'Open Sans', Verdana, Helvetica, sans-serif;
+  color:#080808;
+  resize: none;
+}
+#nTask #form input.photo {
+  background:#222222 
+}
+#nTask #form input.area {
+  background:#222222 
+}
+#nTask #form input.description {
+  background:#222222 
+}
+#nTask #form input.contractor {
+    background:#222222 
+}
+#nTask #form input.action {
+    background:#222222 
+}
+#nTask #form input.commitment {
+    background:#222222 
+}
+#nTask #form input.finishdate {
+    background:#222222 
+}
+#nTask #form input.submit {
+  cursor: pointer;
+  width:85px;
+  height:30px;
+  float:right;
+  padding:0px 0px 5px 0px;
+  margin:10px 16px 0px 0px;
+  background:#222222;
+  color:#F1F1F1;
+  font: 14px/16px'Bree Serif', Georgia, serif;
+}
+#nTask #form input.submit:hover {
+  background-color:#000000;
+  transition: background-color 0.2s;
+}

@@ -1,0 +1,88 @@
+{% load static %}
+<html>
+
+<head>
+  <title>PUNCH LIST</title>
+  <link rel="stylesheet" href="{% static 'css/edits.css' %}">
+  <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+  <script  src="{% static 'js/filter.js' %}" defer></script>
+  <script  src="{% static 'js/viewbtn.js' %}" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+</head>
+
+<body>
+
+
+  <div>
+    <!-- <div id="link">
+      <a href="http://127.0.0.1:8080/newtask"><h3>Create New Task</h3></a> 
+      <a href="http://127.0.0.1:8080/opentasks"><h3>List Of Open Tasks</h3></a>
+      <a href="http://127.0.0.1:8080/completedTasks"><h3>Completed Tasks</h3></a>
+      <a href="http://127.0.0.1:8080/alltasks"><h3>Entire List of Tasks</h3></a>
+      <a href="http://127.0.0.1:8080/logout"><h3>Logout</h3></a>
+    </div></br> -->
+
+    <h2><center id="registerEmp"> Punch List </center></h2>
+    
+    <h2><center hidden id="update"> Update Item </center></h2>
+    </br>
+    
+  <div id = "fillForm" >
+    <form id="actionForm" method="POST" enctype="multipart/form-data" action="{% url 'updated' pk=item.pk %}" >
+      {% csrf_token %}
+      <div> 
+        <span>Photo</span>
+        <input class="photo" type="file" name="photo" value="{{item.photo.url}}" />
+        {% if item.photo %}
+        <td><img src="{{ item.photo.url }}" alt="" width="30" ></td>
+        {% else %}
+        <td><img src="{% static 'images/down.png' %}" alt="" width="30" ></td>
+        {% endif %}
+      </div>
+      <div>
+        <span>Area</span>
+        <input type="text" name="area" class="area" value="{{item.area}}">
+      </div>
+      <div>
+        <span>Description</span>
+        <input type="text" name="description" class="description" value="{{item.description}}">
+      </div>
+      <div>
+        <span>Contractor</span>
+        <input type="text" name="contractor" min="1" max="4" class="contractor" value="{{item.contractor}}" />
+      </div>
+      <div>
+        <span>Action</span>
+        <input class="action"  type="text" name="action" value="{{item.action}}" />
+      </div>
+      <div>
+        <span>Commitment</span>
+        <input  type="date" name="commitment" class="commitment" value="{{item.commitment|date:'Y-m-d'}}" />
+      </div>
+      <div>
+        <span>Status</span>
+        <select type="text" name="status" class="status" value="{{item.status}}" >
+          <option value="{{item.status}}">{{item.status}}</option>
+          <option value="-----">-----</option>
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+      <div>
+        <span>Finish Date</span>
+        <input type="date" name="finishdate" class="finishdate" value="{{item.finishdate|date:'Y-m-d'}}"  />
+      </div>
+      </br></br></br>
+        <input class="submit" id="update-user" type="submit" value="Update">
+    </form>
+    <div class="msg"><center>{{ msg }}</center></div>
+  </div><br><br></br>
+</div>
+         
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Punch List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <section id="nTask">
+		<div class="content">
+
+      <div id="link">
+        <a href="{% url 'list' %}">Punch List</a>
+      </div>
+      <div class="msg"><center>{{ msg }}</center></div>
+      </br><h2>Create New</h2>
+    
+		  <div id="form">
+      <form id='actionForm' method="POST" enctype="multipart/form-data" action="{% url 'insert' %}">
+        {% csrf_token %}
+		    <span>Photo</span>
+        <input class="photo" type="file" name="photo" tabindex=1 />
+        <span>Area</span>
+        <input type="text" name="area" class="area" tabindex=2>
+        <span>Description</span>
+        <input type="text" name="description" class="description" tabindex=3>
+        <span>Contractor</span>
+        <input type="text" name="contractor" min="1" max="4" class="contractor" tabindex=4 />
+        <span>Action</span>
+        <input class="action"  type="text" name="action" tabindex=5 />
+        <span>Commitment</span>
+        <input  type="date" name="commitment" class="commitment" tabindex=6 />
+        <span>Status</span>
+        <select type="text" name="status" class="status" tabindex=7>
+          <option value="-----">-----</option>
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+      
+      <input class="submit" type="submit" value="Insert" tabindex=8>
+    </form>
+	</div>
+</section>
+    
+</body>
+</html>

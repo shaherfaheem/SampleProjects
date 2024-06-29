@@ -1,0 +1,73 @@
+{% load static %}
+<html>
+
+<head>
+  <title>PROJECT TASKS</title>
+  <link rel="stylesheet" href="{% static 'css/edits.css' %}">
+  <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+  <script  src="{% static 'js/filter.js' %}" defer></script>
+  <script  src="{% static 'js/viewbtn.js' %}" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+</head>
+
+<body>
+
+
+  <div>
+    <!-- <div id="link">
+      <a href="http://127.0.0.1:8080/newtask"><h3>Create New Task</h3></a> 
+      <a href="http://127.0.0.1:8080/opentasks"><h3>List Of Open Tasks</h3></a>
+      <a href="http://127.0.0.1:8080/completedTasks"><h3>Completed Tasks</h3></a>
+      <a href="http://127.0.0.1:8080/alltasks"><h3>Entire List of Tasks</h3></a>
+      <a href="http://127.0.0.1:8080/logout"><h3>Logout</h3></a>
+    </div></br> -->
+
+    <h2><center id="registerEmp"> Project Tasks </center></h2>
+    
+    <h2><center hidden id="updateEmployee"> Update Tasks </center></h2>
+    </br>
+    
+  <div id = "fillForm" >
+    <form id="actionForm" method="POST" action="{% url 'updated' pk=data.pk %}" >
+      {% csrf_token %}
+      <div> 
+        <span>Area Name</span>
+        <input class="areaName" type="text" name="areaName" value="{{data.areaName}}" />
+      </div>
+      <div>
+        <span>Area(sqm)</span>
+        <input type="text" name="areaSqm" class="areaSqm" value="{{data.areaSqm}}">
+      </div>
+      <div>
+        <span>Work</span>
+        <input type="text" name="work" class="work" value="{{data.work}}">
+      </div>
+      <div>
+        <span>Manpower</span>
+        <input type="text" name="manpower" class="manpower" value="{{data.manpower}}" />
+      </div>
+      <div>
+        <span>Quantity</span>
+        <input type="number" name="quantity" class="quantity" value="{{data.quantity}}" />
+      </div>
+      <div>
+        Start Date
+        <input class="startdate" type="date" name="startdate" value="{{data.startdate|date:'Y-m-d'}}">
+      </div>
+      <div>
+        Finish Date
+        <input class="finishdate" type="date" name="finishdate" value="{{data.finishdate|date:'Y-m-d'}}">
+      </div>
+      </br></br></br>
+        <input class="submit" id="update-user" type="submit" value="Update">
+    </form>
+    <div class="msg"><center>{{ msg }}</center></div>
+  </div><br><br></br>
+</div>
+         
+
+</body>
+</html>

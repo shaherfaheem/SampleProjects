@@ -1,0 +1,140 @@
+{% load static %}
+<html>
+
+<head>
+  <title>PUNCH LIST</title>
+  <link rel="stylesheet" href="{% static 'css/edits.css' %}">
+  <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+  <script  src="{% static 'js/filter.js' %}" defer></script>
+  <script  src="{% static 'js/viewbtn.js' %}" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+</head>
+
+<body>
+
+
+  <div>
+    <div id="link">
+      <a href="{% url 'insert' %}">Create New</a>
+    </div>
+  </br>
+  <h2><center id="tasks"> Project Tasks </center></h2>
+  </br></br>
+
+  <a href="{% url 'list' %}">View All</a>
+<div id = "tasksList">
+
+  <table id = "myTable" class = "table">
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Description
+          <form class="search" id="search" method="POST" action="{% url 'filterDescr' %}" >
+            {% csrf_token %}
+            <input class="name" type="text" name="description" placeholder="search here">
+            <input class="submit" id="update-user" type="submit" hidden value="search">
+          </form>
+        </th>
+        <th>Area
+          <form class="search" id="search" method="POST" action="{% url 'filterArea' %}" >
+            {% csrf_token %}
+            <input class="name" type="text" name="area" placeholder="search here">
+            <input class="submit" id="update-user" type="submit" hidden value="search">
+          </form>
+        </th>
+        <th>Contractor
+          <form class="search" id="search" method="POST" action="{% url 'filterCont' %}" >
+            {% csrf_token %}
+            <input class="name" type="text" name="contractor" placeholder="search here">
+            <input class="submit" id="update-user" type="submit" hidden value="search">
+          </form>
+        </th>
+        <th>Action</th>
+        <th>Commitment</th>
+        <th>Status</th>
+        <th>Finish Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        {% if item.photo %}
+        <td><img src="{{ item.photo.url }}" alt="" width="120" ></td>
+        {% else %}
+        <td><img src="{% static 'images/down.png' %}" alt="" width="120" ></td>
+        {% endif %}
+
+        <td>{{ item.description}}</td>
+        <td>{{ item.area}}</td>
+        <td><center>{{ item.contractor}}</center></td>
+        <td>{{ item.action}}</td>
+        <td>{{ item.commitment|date:"d/m/Y"}}</td>
+        <td>{{ item.status}}</td>
+        <td>{{ item.finishdate|date:'d/m/Y'}}</td>
+        <td><a href="{% url 'update' pk=item.pk %}">Edit</a></td>
+      <td>
+        <button onclick="document.getElementById('id01{{item.id}}').style.display='block'">Delete</button>
+        <div id="id01{{item.id}}" class="modal">
+          <span onclick="document.getElementById('id01{{item.id}}').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <form method="POST" action="{% url 'delete' pk=item.pk %}">
+            {% csrf_token %}
+            <div class="container">
+              <h1>Delete Task</h1>
+              <p>Are you sure you want to delete {{item.task}} ?</p>
+              <input type="text" hidden value="{{item.id}}" name="id">
+              <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01{{item.id}}').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="submit" class="deletebtn">Delete</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </td>
+      <td><center>
+        <form method="POST" action="{% url 'completed' pk=item.pk %}">
+          {% csrf_token %}
+          <input type="text" hidden value="{{item.id}}" name="id">
+          <input class="complete" type="submit" value="Mark As Completed">
+        </form>  
+      </center>
+      </td>
+      </tr>
+      {% endfor %}
+</div>
+    </tbody>
+  </table>
+</div>
+
+ </div> 
+
+<script>
+
+
+function isNumber(evt) {
+  evt = (evt) ? evt : window.event;
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    return false;
+  }
+  return true;
+}
+
+
+var modal = document.getElementById('id01');
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+</script>
+
+</body>
+</html>
