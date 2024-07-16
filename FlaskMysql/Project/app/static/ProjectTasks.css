@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0  
+  }
+  body {
+    background:#2a363b;
+    color: #B1B1B1;
+    margin: 0px;
+    width: 1290px;
+  }
+
+  #link {
+    background-color: #212a2e;
+    padding: 20px 20px 20px 20px;
+    width: 1500px;
+    margin: none;
+  }
+
+  #link a h3 {
+    color: #B1B1B1;
+    display:inline;
+    text-align:center;
+    padding:none;
+    margin:5px 7px 15px 0px;
+    font: 18px/18x'Bree Serif', Georgia, serif;  
+  }  
+  
+  #link a h3:hover {
+    color:#ffffff;
+    transition: color 0.2s;
+  }
+
+
+  #fillForm #actionForm div {
+    background:#222222;
+    color: #B1B1B1;
+    display:inline-block;
+    text-align:center;
+    width:167px;
+    padding:2px 2px 2px 2px;
+    margin:2px 7px 0px 0px;
+    font: 20px/20px'Bree Serif', Georgia, serif;  
+  }  
+  #fillForm #actionForm input {
+    float:left;
+    text-align: center;
+    width:167px;
+    border:0px;
+    color:#000000;
+    padding:10px 10px 10px 30px;
+    font: 13px/10px'Open Sans', Verdana, Helvetica, sans-serif;
+    margin-bottom:5px;
+  }
+  #fillForm #actionForm select {
+    float:left;
+    text-align: center;
+    width:167px;
+    border:0px;
+    color:#000000;
+    padding:10px 10px 10px 30px;
+    font: 13px/10px'Open Sans', Verdana, Helvetica, sans-serif;
+    margin-bottom:1px;
+  }
+  
+  #fillForm #actionForm input.task {
+    background:#a0a1a3
+  }
+  #fillForm #actionForm select.employee {
+    background:#a0a1a3 
+  }
+  #fillForm #actionForm select.status {
+    background:#a0a1a3 
+  }
+  #fillForm #actionForm input.priority {
+    background:#a0a1a3 
+  }
+  #fillForm #actionForm input.startdate {
+    background:#a0a1a3 
+  }
+  #fillForm #actionForm input.duration {
+    background:#a0a1a3 
+  }
+  #fillForm #actionForm input.deadline {
+    background:#a0a1a3
+  }
+
+  #fillForm #actionForm input.submit {
+    cursor: pointer;
+    width:85px;
+    height:30px;
+    float:right;
+    padding:0px 0px 5px 0px;
+    margin:10px 16px 0px 0px;
+    background:#222222;
+    color:#B1B1B1;
+    font: 18px/18px'Bree Serif', Georgia, serif;
+  }
+  #fillForm #actionForm input.submit:hover {
+    color:#f5f0f0;
+    transition: background-color 0.2s;
+  }
+
+
+  #myTable thead tr th {
+    background:#222222;
+    color: #B1B1B1;
+    /* display:inline; */
+    text-align:center;
+    width:167px;
+    padding:10px 20px 10px 20px;
+    margin:2px 3px 0px 0px;
+    font: 15px/15px'Bree Serif', Georgia, serif;
+  }
+
+  #myTable tbody tr td {
+    background:#a0a1a3;
+    color: #000000;
+    /* display:inline; */
+    text-align:center;
+    width:167px;
+    padding:10px 20px 10px 20px;
+    margin:2px 3px 0px 0px;
+    font: 15px/15px'Bree Serif', Georgia, serif;
+  }
+
+
+  #myTable thead tr th button.buttons {
+  cursor: pointer;
+  float:center;
+  padding: 0;
+  border: none;
+  background: none;
+  color:#F1F1F1;
+  font: 17px/17px'Bree Serif', Georgia, serif;
+  }
+  
+  #myTable thead tr th button.buttons:hover {
+    color:#6d6eb3;
+    transition: background-color 0.2s;
+  }
+
+  #myTable tbody tr td input.edit {
+    cursor: pointer;
+    float:center;
+    padding: 0;
+    border: none;
+    background: none;
+    color:#F1F1F1;
+    font: 17px/17px'Bree Serif', Georgia, serif;
+    }
+    
+  #myTable tbody tr td input.edit:hover {
+    color:#dbce18;
+    transition: background-color 0.2s;
+    }
+
+  #myTable tbody tr td form input.delete {
+    cursor: pointer;
+    float:center;
+    padding: 0;
+    border: none;
+    background: none;
+    color:#F1F1F1;
+    font: 17px/17px'Bree Serif', Georgia, serif;
+    }
+      
+  #myTable tbody tr td form input.delete:hover {
+    color:#e91f3a;
+    transition: background-color 0.2s;
+    }
+
+  #myTable tbody tr td form input.complete {
+    cursor: pointer;
+    float:center;
+    padding: 0;
+    border: none;
+    background: none;
+    color:#F1F1F1;
+    font: 17px/17px'Bree Serif', Georgia, serif;
+    }
+        
+  #myTable tbody tr td form input.complete:hover {
+    color:#000000;
+    transition: background-color 0.2s;
+    }
+
+
+
+  #myTableThree thead tr th {
+    background:#222222;
+    color: #B1B1B1;
+    /* display:inline; */
+    text-align:center;
+    width:200px;
+    padding:10px 20px 10px 20px;
+    margin:2px 3px 0px 0px;
+    font: 15px/15px'Bree Serif', Georgia, serif;
+    }
+      
+  #myTableThree tbody tr td {
+    background:#a0a1a3;
+    color: #000000;
+    /* display:inline; */
+    text-align:center;
+    width:200px;
+    padding:10px 20px 10px 20px;
+    margin:2px 3px 0px 0px;
+    font: 15px/15px'Bree Serif', Georgia, serif;
+    }
+
+  #myTableThree thead tr th button.buttons {
+    cursor: pointer;
+    float:center;
+    padding: 0;
+    border: none;
+    background: none;
+    color:#F1F1F1;
+    font: 17px/17px'Bree Serif', Georgia, serif;
+    }
+  
+  #myTableThree thead tr th button.buttons:hover {
+    color:#6d6eb3;
+    transition: background-color 0.2s;
+    }
+
+  #myTableThree tbody tr td input.edit {
+    cursor: pointer;
+    float:center;
+    padding: 0;
+    border: none;
+    background: none;
+    color:#F1F1F1;
+    font: 17px/17px'Bree Serif', Georgia, serif;
+    }
+    
+  #myTableThree tbody tr td input.edit:hover {
+    color:#dbce18;
+    transition: background-color 0.2s;
+    }
+
+  #myTableThree tbody tr td form input.delete {
+    cursor: pointer;
+    float:center;
+    padding: 0;
+    border: none;
+    background: none;
+    color:#F1F1F1;
+    font: 17px/17px'Bree Serif', Georgia, serif;
+    }
+      
+  #myTableThree tbody tr td form input.delete:hover {
+    color:#e91f3a;
+    transition: background-color 0.2s;
+    }
+
+  #myTableThree tbody tr td form input.complete {
+    cursor: pointer;
+    float:center;
+    padding: 0;
+    border: none;
+    background: none;
+    color:#F1F1F1;
+    font: 17px/17px'Bree Serif', Georgia, serif;
+    }
+     
+  #myTableThree tbody tr td form input.complete:hover {
+    color:#000000;
+    transition: background-color 0.2s;
+    }
+
+
+  #myTableTwo thead tr th {
+    background:#222222;
+    color: #B1B1B1;
+    /* display:inline; */
+    text-align:center;
+    width:167px;
+    padding:10px 20px 10px 20px;
+    margin:2px 3px 0px 0px;
+    font: 15px/15px'Bree Serif', Georgia, serif;
+  }
+
+  #myTableTwo tbody tr td {
+    background:#a0a1a3;
+    color: #000000;
+    /* display:inline; */
+    text-align:center;
+    width:167px;
+    padding:10px 20px 10px 20px;
+    margin:2px 3px 0px 0px;
+    font: 15px/15px'Bree Serif', Georgia, serif;
+  }
+
+
+  #myTableTwo thead tr th button.buttons {
+  cursor: pointer;
+  float:center;
+  padding: 0;
+  border: none;
+  background: none;
+  color:#F1F1F1;
+  font: 17px/17px'Bree Serif', Georgia, serif;
+  }
+  
+  #myTableTwo thead tr th button.buttons:hover {
+    color:#6d6eb3;
+    transition: background-color 0.2s;
+  }
+        

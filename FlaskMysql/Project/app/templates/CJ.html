@@ -1,0 +1,127 @@
+<html>
+
+<head>
+  <title>PROJECT TASKS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/ProjectTasks.css" type="text/css">
+  <link rel="stylesheet" href="/static/modal19.css" type="text/css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/Filter.js"></script>
+  <script type="text/javascript" src="/static/viewbtns.js"></script>
+</head>
+
+<body>
+
+
+  <div>
+    <div id="link">
+        <a href="http://127.0.0.1:8080/"><h3>DB</h3></a> 
+        <a href="http://127.0.0.1:8080/innerjoins"><h3>Inner Joins</h3></a>
+        <a href="http://127.0.0.1:8080/innerjoinsmultiple"><h3>Inner Joins Multiple</h3></a>
+        <a href="http://127.0.0.1:8080/usingclause"><h3>Using Clause</h3></a>
+        <a href="http://127.0.0.1:8080/joinsacrossdbs"><h3>Joins Across Dbs</h3></a>
+        <a href="http://127.0.0.1:8080/selfjoins"><h3>Self Joins</h3></a> 
+        <a href="http://127.0.0.1:8080/compoundjoins"><h3>Compound Joins</h3></a>
+        <a href="http://127.0.0.1:8080/implicitjoins"><h3>Implicit Joins</h3></a>
+        <a href="http://127.0.0.1:8080/leftjoin"><h3>Left Join</h3></a>
+        <a href="http://127.0.0.1:8080/leftjoinmult"><h3>Left Join Multiple</h3></a>
+        <a href="http://127.0.0.1:8080/selfouterjoins"><h3>Self Outer Joins</h3></a>
+        <a href="http://127.0.0.1:8080/crossjoins"><h3>Cross Join</h3></a>
+        <a href="http://127.0.0.1:8080/unions"><h3>Unions</h3></a>
+
+    </div></br>
+
+
+<br><br><br>        
+<h4>-- ORDERS --</h4>
+<div id = "tasksList">
+
+  <table id = "myTable" class = "table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Customer ID</th>
+        <th>Order Status</th>
+        <th>Shipper ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in dataO %}
+      <tr>
+        <td>{{ item.order_id}}</td>
+        <td>{{ item.customer_id}}</td>
+        <td>{{ item.order_status}}</td>
+        <td>{{ item.shipper_id}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<br><br><br>
+
+  <h4>-- SHIPPING --</h4>
+  <div id = "tasksList">
+
+    <table id = "myTable" class = "table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer ID</th>
+          <th>Shipper ID</th>
+          <th>Shipping Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in dataSH %}
+        <tr>
+          <td>{{ item.order_id}}</td>
+          <td>{{ item.customer_id}}</td>
+          <td>{{ item.shipper_id}}</td>
+          <td>{{ item.shipping_details}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  
+<br><br><br>
+<h4>-- COMPOUND JOINS --</h4>
+<h4>SELECT o.order_id, o.customer_id, o.order_status, s.shipper_id, s.shipping_details</h4>
+<h4>FROM orders o</h4>
+<h4>JOIN shipping s ON o.order_id = s.order_id</h4>
+<h4>AND o.customer_id = s.customer_id;</h4>
+<br>
+
+<div id = "tasksList">
+
+    <table id = "myTable" class = "table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer ID</th>
+          <th>Order Status</th>
+          <th>Shipper ID</th>
+          <th>Shipping Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in dataCJ %}
+        <tr>
+          <td>{{ item.order_id}}</td>
+          <td>{{ item.customer_id}}</td>
+          <td>{{ item.order_status}}</td>
+          <td>{{ item.shipper_id}}</td>
+          <td>{{ item.shipping_details}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+
+</body>
+</html>
