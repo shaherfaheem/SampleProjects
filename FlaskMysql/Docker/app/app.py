@@ -17,7 +17,6 @@ from datetime import datetime
 # from fetchaccs import fetchAccs
 # from completedtask import completed_task
 # from errorhandler import page_not_found
-import re
 from flask import render_template
 from flask import Flask
 # from app import app
@@ -27,11 +26,11 @@ app = Flask(__name__)
 
 # MySQL configuration
 mysql_db = mysql.connector.connect(
-    host="host.docker.internal",
-    port="3306",
-    user="root",
-    password="root123",
-    database="dbjoins2"
+    host="db",
+    port='3306',
+    user="flask",
+    password="mysql",
+    database="reldb1"
 )
 
 
@@ -42,6 +41,7 @@ def fetchCustomer():
 
   try:
     cursor = mysql_db.cursor(dictionary=True)
+
     
     cursor.execute("SELECT * FROM customer")
     rows = cursor.fetchall()
@@ -402,4 +402,4 @@ def page_not_found(e):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='8080')
+    app.run(host='0.0.0.0', port=5000, debug=True)

@@ -2,23 +2,32 @@
   
   services:
     flask-app:
-      image: moshaher/flaskrepo:flaskmysql
+      image: moshaher/flaskrepo:flask
 
       build: ./app
-      links:
-        - mysql
+
       ports:
-        - "8080:8080"
+        - "8080:5000"
       depends_on: 
-        - mysql
+        - db
+
     
-    mysql:
-      image: moshaher/flaskrepo:flaskmysql
-      ports:
-        - '32000:3306'
+    db:
+      image: moshaher/flaskrepo:8.1
+      restart: always
       environment:    
         MYSQL_ROOT_PASSWORD: root123
+        MYSQL_DATABASE: reldb1
+        MYSQL_USER: flask
+        MYSQL_PASSWORD: mysql
+
+      ports:
+        - "32000:3306"
+  
       volumes:
-        - ./mysql/init.sql:/docker-entrypoint-initdb.d/db.sql
-        - ./data:/var/lib/mysql
+        - ./db_data:/var/lib/mysql
+
+  volumes:
+    db_data:
+
       
